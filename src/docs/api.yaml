@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: NASA Project
+  description: This is The API Documentation made for a NASA Application
+  version: 1.0.0
+  contact:
+    email: waleed.taher17@gmail.com
+servers:
+  - url: http://localhost:8000
+    description: Local server
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
+paths:
+  /api/v1/planets:
+    get:
+      tags:
+        - Planets
+      summary: Get a list of planets
+      security:
+        - bearerAuth: [] # Specify the security requirements for this route
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              example:
+                planets:
+                  - name: Mercury
+                    type: Terrestrial
+                    distance_from_sun: 57.9 million km
+                  - name: Venus
+                    type: Terrestrial
+                    distance_from_sun: 108.2 million km
+                  - name: Earth
+                    type: Terrestrial
+                    distance_from_sun: 149.6 million km
+                  - name: Mars
+                    type: Terrestrial
+                    distance_from_sun: 227.9 million km
+                total_planets: 4

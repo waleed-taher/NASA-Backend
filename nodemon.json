@@ -1,0 +1,6 @@
+{
+  "ext": "js,mjs,cjs,json,yaml",
+  "execMap": {
+    "js": "node --experimental-specifier-resolution=node"
+  }
+}
